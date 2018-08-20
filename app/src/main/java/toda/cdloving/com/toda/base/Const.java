@@ -1,16 +1,16 @@
 package toda.cdloving.com.toda.base;
 
-
-/**
- * @author CDLoving
- * @deprecated 存放全局常量
- */
 public class Const {
-    public static final String HOST = "http://www.wanandroid.com";
 
-    public static final String LOGIN = HOST + "/user/login";
+    public static final String DATA_TYPE_STRING = "String";
 
-    public static final String REGISTER = HOST + "/user/register";
+    public static final String DATA_TYPE_INTEAGER = "Inteager";
 
-    public static final String ADD_TODO = HOST + "/lg/todo/add/json";
+    public static final String DATA_TYPE_BOOLEAN = "Boolean";
+
+    public static final String DATA_TYPE_FLOAT = "Float";
+
+    public static final String DATA_TYPE_LONG = "Long";
+
+    public static final String SHARED_KEY_LOGIN = "login";
 }
