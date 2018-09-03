@@ -2,4 +2,5 @@
 <resources>
     <dimen name="tv_title_size">24sp</dimen>
     <dimen name="margin_title">10dp</dimen>
+    <dimen name="margin_top_title">50dp</dimen>
 </resources>

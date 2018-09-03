@@ -1,6 +1,9 @@
 package toda.cdloving.com.toda.splash;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +23,23 @@ import toda.cdloving.com.toda.util.SharedUtil;
  */
 public class SplashActivity extends BaseActivity {
 
+    @SuppressLint("HandlerLeak")
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Intent intent = new Intent();
+            if (TextUtils.isEmpty((CharSequence) SharedUtil.getParam(SplashActivity.this, Const.SHARED_KEY_LOGIN, ""))) {
+                intent.setClass(SplashActivity.this, LoginActivity.class);
+            }
+            else {
+                intent.setClass(SplashActivity.this, TodoActivity.class);
+            }
+            startActivity(intent);
+            finish();
+        }
+    };
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_splash;
@@ -32,13 +52,6 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     public void initData() {
-        Intent intent = new Intent();
-        if (TextUtils.isEmpty((CharSequence) SharedUtil.getParam(this, Const.SHARED_KEY_LOGIN, null))) {
-            intent.setClass(this, LoginActivity.class);
-        }
-        else {
-            intent.setClass(this, TodoActivity.class);
-        }
-        startActivity(intent);
+        handler.sendEmptyMessageDelayed(0,3000);
     }
 }
