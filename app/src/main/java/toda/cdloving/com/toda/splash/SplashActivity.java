@@ -1,9 +1,11 @@
 package toda.cdloving.com.toda.splash;
 
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 
 import toda.cdloving.com.toda.R;
 import toda.cdloving.com.toda.base.BaseActivity;
