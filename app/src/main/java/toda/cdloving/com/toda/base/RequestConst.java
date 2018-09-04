@@ -13,4 +13,5 @@ public class RequestConst {
     public static final String REGISTER = HOST + "/user/register";
 
     public static final String ADD_TODO = HOST + "/lg/todo/add/json";
+
 }

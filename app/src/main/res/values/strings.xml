@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TODO</string>
     <string name="login">登录</string>
+    <string name="register">注册</string>
+
+    <string name="login_name_tip">请输入用户名</string>
+    <string name="login_psw_tip">请输入密码</string>
+    <string name="register_confirm_psw">请确认密码</string>
+    <string name="register_now">立即注册</string>
 </resources>

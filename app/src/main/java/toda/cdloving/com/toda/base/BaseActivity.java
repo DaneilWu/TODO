@@ -9,7 +9,12 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 public abstract class BaseActivity extends AppCompatActivity {
+
+    private Unbinder mBinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,6 +29,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
         initView();
         initData();
+        mBinder = ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mBinder.unbind();
     }
 
     /**
